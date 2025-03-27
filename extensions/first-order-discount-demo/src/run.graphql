@@ -1,0 +1,18 @@
+query RunInput {
+  cart {
+    buyerIdentity {
+      customer {
+        id
+        hasAnyTag( tags: ["newsletter"])
+        numberOfOrders
+      }
+    }
+    lines {
+      merchandise {
+        ... on ProductVariant {
+          id
+        }
+      }
+    }
+  }
+}
